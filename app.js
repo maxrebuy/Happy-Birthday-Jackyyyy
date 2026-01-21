@@ -64,7 +64,7 @@ const QUIZ_DATA = {
             { label: "Kino mit Snacks und Daniel", sub: "Date Night.... MIT NACHOOOOOOOOOOOS!!!!" },
             { label: "Kino mit Snacks, Daniel und Family/Friends", sub: "Mit den üblichen Verdächtigen und dem üblichen ... NAAAAAAAAAAAAAACHHOOOOOOOOOOSSS!!!!😫😫😫" }
           ],
-          reaction: "Einmal mit Nachos bitte 🥺👉👈"
+          reaction: "Einmal mit Nachos bitte\n🥺👉👈"
         }
       ]
     },
@@ -417,3 +417,4 @@ el.btnRecap.addEventListener("click", toggleRecap);
 
 /* ---------- Init ---------- */
 renderLanding();
+
