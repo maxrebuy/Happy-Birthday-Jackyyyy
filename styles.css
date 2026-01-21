@@ -262,6 +262,7 @@ body{
   color: var(--muted);
   margin: 0 0 12px;
   line-height:1.55;
+  white-space: pre-line;
 }
 
 /* Reveal */
@@ -398,3 +399,4 @@ body{
 .dl a.btn{
   text-decoration:none;
 }
+
