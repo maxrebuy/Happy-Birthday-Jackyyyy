@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Birthday Quiz 🎉</title>
+  <meta name="description" content="Ein kleines Geburtstags-Quiz mit Geschenk am Ende." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Lebhaft, aber clean: Poppins (Headlines) + Inter (Text) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <main class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span class="brand-text">Birthday Quiz</span>
+      </div>
+      <div class="mini" id="miniStatus" aria-live="polite"></div>
+    </header>
+
+    <section class="card" id="card" role="region" aria-label="Quiz">
+      <!-- LANDING -->
+      <div class="screen active" id="screen-landing">
+        <div class="hero">
+          <div class="badge">🎉 Überraschung</div>
+          <h1 class="h1" id="landingTitle">Happy Birthday!</h1>
+          <p class="lead" id="landingText">
+            Ich hab dir ein kleines Quiz gebaut. Keine Sorge: du kannst nicht verlieren.
+          </p>
+        </div>
+
+        <div class="cta-row">
+          <button class="btn primary" id="btnStart">Start</button>
+          <button class="btn ghost" id="btnAbout">Was ist das?</button>
+        </div>
+
+        <div class="note" id="aboutBox" hidden>
+          Multiple-Choice Fragen, aber jede Antwort zählt. Am Ende wartet dein Geschenk 🎁
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div class="screen" id="screen-quiz">
+        <div class="progress">
+          <div class="progress-top">
+            <div class="pill" id="qCounter">Frage 1/10</div>
+            <div class="pill subtle" id="qChapter">Kapitel</div>
+          </div>
+          <div class="bar" aria-label="Fortschritt">
+            <div class="bar-fill" id="barFill" style="width:0%"></div>
+          </div>
+        </div>
+
+        <h2 class="h2" id="questionText">Frage</h2>
+
+        <div class="options" id="options" role="list"></div>
+
+        <div class="feedback" id="feedback" aria-live="polite" hidden>
+          <div class="feedback-top">
+            <span class="spark">✨</span>
+            <span class="feedback-title" id="feedbackTitle">Nice.</span>
+          </div>
+          <p class="feedback-text" id="feedbackText"></p>
+          <button class="btn primary" id="btnNext">Weiter</button>
+        </div>
+      </div>
+
+      <!-- REVEAL -->
+      <div class="screen" id="screen-reveal">
+        <div class="reveal-head">
+          <div class="badge">🎁 Geschenk freigeschaltet</div>
+          <h2 class="h2">Du hast’s durchgezogen.</h2>
+          <p class="lead" id="revealLead">Zeit für dein Geschenk.</p>
+        </div>
+
+        <div class="gift-box">
+          <div class="gift-top">
+            <div class="gift-title" id="giftTitle">Kino-Gutschein</div>
+            <div class="gift-chip" id="giftType">Code</div>
+          </div>
+
+          <div class="gift-body">
+            <p class="gift-desc" id="giftDesc">
+              Hier ist dein Gutschein. Viel Spaß im Kino 🍿
+            </p>
+
+            <div class="gift-code-wrap" id="giftCodeWrap">
+              <div class="gift-code" id="giftCode">XXXX-XXXX-XXXX</div>
+              <button class="btn ghost" id="btnCopy">Kopieren</button>
+            </div>
+
+            <div class="gift-extra" id="giftExtra"></div>
+            <div class="downloads" id="downloads"></div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <button class="btn primary" id="btnRestart">Nochmal spielen</button>
+          <button class="btn ghost" id="btnRecap">Meine Antworten</button>
+        </div>
+
+        <div class="recap" id="recapBox" hidden></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span class="muted">Made with ❤️ — nur für dich.</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
